@@ -152,8 +152,8 @@ int main(void)
                         PORTC |= (1 << DOOR3_PIN);
                         break;
                 }
-                _delay_ms(2000); //Don't delay in the real world
-                PORTC = 0x00;
+                //_delay_ms(2000); //Don't delay in the real world
+                //PORTC = 0x00;
             }
             else if(cmd == DENIED){
                 //Log and report to authorities
