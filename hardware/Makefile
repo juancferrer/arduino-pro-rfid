@@ -17,7 +17,7 @@
 
 DEVICE     = atmega2560
 CLOCK      = 16000000L
-PROGRAMMER = -c stk500v2 -P /dev/tty.usbmodem621 -b 115200
+PROGRAMMER = -c stk500v2 -P /dev/ttyACM0 -b 115200
 OBJECTS    = main.o
 # Fuse values for Mega2560 from arduino/boards.txt
 FUSES      = -U hfuse:w:0xD8:m -U lfuse:w:0xFF:m -U efuse:w:0xFD:m -U lock:w:0x3F:m

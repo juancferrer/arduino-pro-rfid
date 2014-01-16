@@ -9,6 +9,7 @@ Hardware setup
 - Wire up to 4 door latches to pins 30-33.  Where door0 is pin30, door1 is pin31, etc.. This pin will go HIGH, enabling the door to unlock.
 - Compile the firmware by running `make`
 - Flash the firmware by running `make flash`
+![hardware](images/setup.jpg)
 
 Protocol Definition
 --------------------
