@@ -4,7 +4,7 @@ from twisted.internet.serialport import SerialPort
 from twisted.python import log
 from twisted.python.logfile import LogFile
 
-from .protocol import RFIDProtocol
+from protocol import RFIDProtocol
 
 
 class SerialService(service.Service):
@@ -20,14 +20,14 @@ class SerialService(service.Service):
 
 
 
-# Log file maxes at 1mb, and limit it to 10 of them, store them in /tmp
-logfile = LogFile('rfid.log','/tmp',1000000,None,10)
-log.startLogging(logfile)
+# Log file maxes at 1mb, and limit it to 1 of them, store them in /tmp
+#logfile = LogFile('rfid.log','/tmp',1000000,None,0)
+#log.startLogging(logfile)
 
 
 application = service.Application('RFID Controller')
 multiService = service.MultiService()
-controllerService = SerialService(reactor, '/dev/tty.usbmodem621', 9600, log)
+controllerService = SerialService(reactor, '/dev/ttyACM0', 9600, None)
 controllerService.setServiceParent(multiService)
 multiService.setServiceParent(application)
 
