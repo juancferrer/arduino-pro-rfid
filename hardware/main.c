@@ -124,7 +124,6 @@ int main(void)
     //Init UART0 and set stdout to it
     init_uart0();
     stdout = &uart0_out;
-    printf("0:010101010110101001101000\n");
 
     //Clear out all the controller data
     memset(controller.readers, 0, sizeof(controller.readers));
